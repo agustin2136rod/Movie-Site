@@ -18,7 +18,7 @@ namespace Movies
             get {
                 if (movies == null)
                 {
-                    using (StreamReader file = System.IO.File.OpenText("movies.json"))
+                    using (StreamReader file = File.OpenText("movies.json"))
                     {
                         string json = file.ReadToEnd();
                         movies = JsonConvert.DeserializeObject<List<Movie>>(json);
